@@ -46,11 +46,14 @@ app.get("/profile/:id", (req, res) => {
 app.put("/image", (req, res) => {
   image.handleImage(req, res, db);
 });
-
+app.post("/imageurl", (req, res) => {
+  image.handleApiCall(req, res);
+});
 bcrypt.hash("bacon", null, null, function (err, hash) {
   // Store hash in your password DB.
 });
 
-app.listen(3001, () => {
-  console.log("app is running on port 3000");
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
