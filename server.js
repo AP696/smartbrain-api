@@ -53,7 +53,7 @@ bcrypt.hash("bacon", null, null, function (err, hash) {
   // Store hash in your password DB.
 });
 
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`aPP is listening on port ${process.env.PORT}`);
 });
